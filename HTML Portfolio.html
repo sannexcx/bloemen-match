@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mijn Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+<div class="top-border-menu">
+  <nav>
+    <ul class="top-menu-links">
+      <li><a href="#portfolio">Home</a></li>
+      <li><a href="#over">Over mij</a></li>
+      <li><a href="#projecten">Projecten</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
+  <!-- Floating icons -->
+  <div class="floating-icons">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-magic"></i>
+    <i class="fas fa-bolt"></i>
+    <i class="fas fa-circle"></i>
+  </div>
+
+  <!-- Header / Hero -->
+  <header class="hero">
+    
+    </nav>
+    <div class="hero-content">
+      <h2 class="intro-text">
+        Hallo, ik ben een <span class="highlighted-word">Inlevend</span>
+      </h2>
+      <p>Media Ontwerper</p>
+    </div>
+  </header>
+
+  <!-- Over Mij -->
+  <section id="over" class="section">
+    <h2>Over Mij</h2>
+  
+
+    <section class="over-content">
+  <div class="left-side">
+    <img src="images/erg-professioneel.jpg" alt="Foto Sanne" class="over-foto">
+    <img src="images/oui.jpg" alt="Foto" class="over-foto tweede-foto">
+  </div>
+
+  <div class="over-tekst">
+    <p>Welkom op mijn portfolio! </p>
+      <p>Mijn naam is Sanne van Ewijk en ik ben 20 jaar oud.Ik kom en woon in Culemborg, een kleine stad in Gelderland. Op het moment studeer ik Creative Media Design op het Grafisch Lyceum Utrecht.</p>
+    <p>Ik hou al van jongs af aan heel erg van dingen tekenen en schilderen en later in het leven ben ik meer naar een echte ontwerp kant getrokken.Ik heb op 12-jarige leeftijd mijn eigen uno set ontworpen en vanuit dat merkte ik dat ik het ontwerpen van dingen super leuk vond om te doen.</p>
+    <p> Ik wil graag mensen op een andere manier laten kijken dan wat ze normaal gesproken doen. Maar ik ben ook erg bezig met mezelf goed uitdrukken in mijn projecten. Ik wil graag dat er delen van mij duidelijk te zien zijn in producten.
+
+    <p> Als het gaat om Adobe skills heb ik vooral veer ervaring met Photoshop en Illustrator. Maar als het gaat om persoonlijke skills en vaardigheden dan ben ik goed in samenwerken, leer graag nieuwe dingen en ik ben ook erg geduldig maar toch wel weer gediciplineerd.</p>
+    <p>Ik ga graag op onderzoek uit en werk ook net zo goed in een groep als zelfstandig. Mijn grootste skill blijft wel dat ik maar passie snel kan overzetten in mijn werk.</p>
+  </div>
+</section>
+
+
+  <!-- Projecten -->
+<section id="projecten" class="section">
+  <h2>Projecten</h2>
+
+  <div class="projecten-flex">
+    
+  <div class="project-item">
+  <a href="project1.html" target="_blank">
+    <img src="images/image-waste.jpg" alt="Afval verboden" class="project-image">
+  </a>
+  <p><strong>💡 WASTE</strong></p>
+</div>
+
+    <div class="project-item">
+      <a href="documenten/Portfolio-fotografie.pdf" target="_blank">
+        <img src="images/fotografie.jpg" alt="Bekijk PDF" class="project-link-image">
+      </a>
+      <p><strong>💡 Fotografie</strong></p>
+    </div>
+
+    <div class="project-item">
+      <a href="https://youtu.be/J8AmrL4GmXI?si=XNvR0G-cE7uHicxE" target="_blank">
+        <img src="images/trailer.jpg" alt="Bekijk video" class="project-link-image">
+      </a>
+      <p><strong>💡 Film trailer</strong></p>
+    </div>
+
+    <div class="project-item">
+      <a href="project2.html" target="_blank">
+        <img src="images/hotsauce-mockup.jpg" alt="hot sauce" class="project-image">
+      </a>
+      <p><strong>💡 Hot Sauce</strong></p>
+  </div>
+
+<div class="project-item">
+      <a href="project3.html" target="_blank">
+        <img src="images/bloemen-match.jpg" alt="bloemen-match" class="project-image">
+      </a>
+      <p><strong>💡 Bloemen Match</strong></p>
+  </div>
+
+</section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="section fade-in">
+  <h2 class="fade-in-text">Contact</h2>
+  <p class="fade-in-text"><p>Stuur me een mail: <a href="mailto:jij@example.com">240893@student.glu.nl</a></p>
+        <p>Stuur me een appje: <a href="+31 6 12345678">+31 6 83383556</a></p>
+
+
+ 
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // IntersectionObserver voor sectie animaties
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+  <script>
+    // Wisselende woorden animatie
+    document.addEventListener("DOMContentLoaded", () => {
+      const words = ['Creatief denkend.', 'Probleemoplossend.', 'Hardwerkend.', 'Leergierig', 'Innovatief'];
+      const el = document.querySelector('.highlighted-word');
+      let i = 0;
+
+      setInterval(() => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(-10px)';
+
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          el.textContent = words[i];
+          el.style.opacity = 1;
+          el.style.transform = 'translateY(0)';
+        }, 400);
+      }, 3000);
+    });
+  </script>
+<script>
+  const fadeText = document.querySelectorAll('.fade-in-text');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeText.forEach(el => fadeObserver.observe(el));
+</script>
+
+</body>
+<footer>
+  <div class="social-footer">
+    <a href="https://instagram.com/sanne.v.e_xx" target="_blank" class="social-item">
+      <i class="fab fa-instagram"></i><span>@sanne.v.e_xx</span>
+    </a>
+    <a href="https://www.tiktok.com/@sanneve_xcx" target="_blank" class="social-item">
+      <i class="fab fa-tiktok"></i><span>@sanneve_xcx</span>
+    </a>
+      </div>
+  <p>&copy; Sanne van Ewijk </p>
+</footer>
+
+
+</html>

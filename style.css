@@ -1,0 +1,433 @@
+/* ====================================
+   🌐 BASISINSTELLINGEN & BODY
+==================================== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(270deg, #f6d365, #fda085, #fbc2eb, #a6c1ee);
+  background-size: 800% 800%;
+  animation: gradientFlow 20s ease infinite;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ====================================
+   🎯 STRUCTUUR: SECTIES & TITELS
+==================================== */
+section {
+  border: 2px solid #4a00e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  transition: box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+section:hover {
+  box-shadow: 0 8px 24px rgba(74, 0, 224, 0.3);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  position: relative;
+  animation: titleEntrance 2s ease;
+}
+.section h2::before {
+  content: "🎯 ";
+}
+
+@keyframes titleEntrance {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌟 Sub-animatie op h2 */
+h2 {
+  animation: floatTitle 4s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+/* ====================================
+   🚀 HEADER & HERO SECTIE
+==================================== */
+header.hero {
+  border: 2px solid #8e2de2;
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 50px;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero-content {
+  margin-top: 40px;
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #eee;
+}
+
+.intro-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  animation: fadeSlideIn 2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.highlighted-word {
+  color: #ffdd57;
+  animation: fadeWords 8s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes fadeWords {
+  0%, 20%   { opacity: 1; transform: translateY(0); }
+  25%, 45%  { opacity: 0; transform: translateY(-20px); }
+  50%, 70%  { opacity: 1; transform: translateY(0); }
+  75%, 95%  { opacity: 0; transform: translateY(-20px); }
+  100%      { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================================
+   📍 NAVIGATIEBALK
+==================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo i {
+  color: #ffdd57;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #ffdd57;
+  transform: scale(1.1);
+}
+
+/* Top border menu */
+.top-border-menu {
+  border-bottom: 4px solid #502ADC;
+  background: #000d33;
+  padding: 10px 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-menu-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.top-menu-links li:not(:last-child) {
+  border-right: 1.5px solid #fff;
+  padding-right: 20px;
+  margin-right: 20px;
+}
+
+.top-menu-links li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #5C01DC;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.top-menu-links li a:hover {
+  color: #fff;
+}
+
+/* ====================================
+   🎨 PROJECTEN
+==================================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: linear-gradient(to bottom right, #ffffff, #f0f0ff);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card h3::before {
+  content: "💡 ";
+}
+
+.project-link-image {
+  width: 200px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.projecten-flex {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.project-item {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #4a00e0;
+  border-radius: 20px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ====================================
+   📫 CONTACT & FOOTER
+==================================== */
+#contact a {
+  color: #4a00e0;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#contact a:hover {
+  color: #8e2de2;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  color: white;
+  position: relative;
+}
+
+footer::before {
+  content: "🌟";
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* SOCIAL LINKS */
+.social-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.social-item i {
+  font-size: 1.4rem;
+  color: #ffdd57;
+}
+
+/* ====================================
+   ✨ ANIMATIES & EFFECTEN
+==================================== */
+.fade-in-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slowSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating icons */
+.floating-icons {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-icons i {
+  position: absolute;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.2);
+  animation: floatIcon 20s linear infinite;
+}
+
+.floating-icons i:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.floating-icons i:nth-child(2) { left: 25%; top: 40%; animation-delay: 3s; }
+.floating-icons i:nth-child(3) { left: 50%; top: 10%; animation-delay: 6s; }
+.floating-icons i:nth-child(4) { left: 75%; top: 60%; animation-delay: 9s; }
+.floating-icons i:nth-child(5) { left: 90%; top: 30%; animation-delay: 12s; }
+
+@keyframes floatIcon {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+  50%  { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.5; }
+}
+
+/* ====================================
+   📱 MEDIA QUERIES
+==================================== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+.over-content {
+  display: flex;
+  align-items: flex-start; /* Zorgt dat tekst bovenaan uitlijnt met foto */
+  gap: 20px; /* Ruimte tussen foto en tekst */
+}
+
+.over-foto {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.over-tekst {
+  display: flex;
+  flex-direction: column;
+  gap: 1em; /* Ruimte tussen alinea’s */
+  max-width: 960px; /* max breedte van tekstblok */
+}
+
+@media (max-width: 600px) {
+  .over-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .over-foto {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+
+  .over-tekst {
+    max-width: 100%;
+  }
+}
+
